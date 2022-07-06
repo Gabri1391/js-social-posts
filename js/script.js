@@ -1,5 +1,4 @@
 const container = document.getElementById('container');
-const likeButton = document.querySelector('.like-button');
 
 // Milestone 1 
 
@@ -12,7 +11,7 @@ const post = [
         date: '08/12/2022',
         text: 'No filter needed',
         pic: 'https://unsplash.it/300/300?image=110',
-        likes: '243'
+        likes: 243
     },
 
     {
@@ -22,7 +21,7 @@ const post = [
         date: '06/11/2022',
         text: 'A pic from my shooting',
         pic: 'https://unsplash.it/300/300?image=80',
-        likes: '500'
+        likes: 500
     },
 
     {
@@ -32,7 +31,7 @@ const post = [
         date: '05/22/2022',
         text: 'In my sparetime I love making photos',
         pic: 'https://unsplash.it/300/300?image=65',
-        likes: '128'
+        likes: 128
     }
 ]
 
@@ -70,7 +69,7 @@ for(let i = 0; i < post.length; i++){
             <span class="like-button__label">Mi Piace</span>
           </a>
         </div>
-        <div class="likes__counter">Piace a <b id="like-counter-1" class="js-likes-counter">${current.likes}</b> persone</div>
+        <div class="likes__counter">Piace a <b id="counter-likes-${current.id}" class="js-likes-counter">${current.likes}</b> persone</div>
       </div>
     </div>
   </div>`
@@ -78,9 +77,15 @@ for(let i = 0; i < post.length; i++){
 }
 
 //Milestone 3
+const likeButtons = document.querySelectorAll('.like-button');
+const counter = document.querySelectorAll('.js-likes-counter');
 
-likeButton.addEventListener('click', function(){
-    likeButton.classList.add(like-button--liked)
-});
+for(let i = 0; i < likeButtons.length; i++){
 
-console.log(likeButton)
+     likeButtons[i].addEventListener('click', function(event){
+          event.preventDefault()
+          likeButtons[i].classList.add('like-button--liked')
+          counter[i].innerHTML = `${post[i].likes + 1}`;
+        });
+    }
+    
