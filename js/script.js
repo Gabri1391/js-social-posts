@@ -80,7 +80,7 @@ for(let i = 0; i < post.length; i++){
 //Milestone 3
 
 likeButton.addEventListener('click', function(){
-    likeButton.classList.add(--liked)
+    likeButton.classList.add(like-button--liked)
 });
 
 console.log(likeButton)
