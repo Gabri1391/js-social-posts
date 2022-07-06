@@ -1,4 +1,5 @@
 const container = document.getElementById('container');
+const likeButton = document.querySelector('.like-button');
 
 // Milestone 1 
 
@@ -77,3 +78,9 @@ for(let i = 0; i < post.length; i++){
 }
 
 //Milestone 3
+
+likeButton.addEventListener('click', function(){
+    likeButton.classList.add(--liked)
+});
+
+console.log(likeButton)
